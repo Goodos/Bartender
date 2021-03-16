@@ -9,6 +9,7 @@ public class VisitorController : MonoBehaviour
     private Vector3 directionVector;
     private Vector3 startPos;
     private float speed = 4f;
+    private bool decreaseScore = true;
 
     public float timer = 0;
     public bool startTimer = false;
@@ -33,6 +34,11 @@ public class VisitorController : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
+                if (decreaseScore)
+                {
+                    ConveyorController.score--;
+                    decreaseScore = false;
+                }
                 Movement(startPos);
                 if (transform.position == startPos)
                 {
@@ -90,6 +96,7 @@ public class VisitorController : MonoBehaviour
                         tray.GetComponent<TrayMovement>().startMove = false;
                         tray.transform.SetParent(transform);
                         tray.transform.localPosition = new Vector3(0, tray.transform.localPosition.y, -.6f);
+                        decreaseScore = false;
                         ConveyorController.score++;
                         timer = 0;
                     }

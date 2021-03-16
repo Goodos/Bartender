@@ -152,6 +152,7 @@ public class UIController : MonoBehaviour
     void Restart()
     {
         Time.timeScale = 1;
+        ConveyorController.score = 0;
         SceneManager.LoadScene("GameScene");
     }
 }
