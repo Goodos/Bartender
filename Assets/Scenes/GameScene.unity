@@ -381,7 +381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 289, y: 285.00018}
+  m_AnchoredPosition: {x: 145, y: 285.00018}
   m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &426922871
@@ -578,7 +578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 506, y: 285.00018}
+  m_AnchoredPosition: {x: 362, y: 285.00018}
   m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &538798025
@@ -1227,6 +1227,7 @@ MonoBehaviour:
   endWindow: {fileID: 1132749127}
   time: {fileID: 538798025}
   score: {fileID: 426922871}
+  scoreOnEndWindow: {fileID: 3124105068513007654}
   sphere: {fileID: 4305642219257213207, guid: 3a1c78b329f6835428920b006ddc30a2, type: 3}
   cube: {fileID: 5922298158202014199, guid: b3b5187b993d549458dfdb0c4059d1ac, type: 3}
   parralel: {fileID: 1637784237542597415, guid: 848469ade3f922b44826ca17268513b1,
@@ -1798,6 +1799,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1393938228}
     m_Modifications:
+    - target: {fileID: 2131505413700453894, guid: a316ad9f6c93ed24ca5e34a2932db696,
+        type: 3}
+      propertyPath: m_Name
+      value: ScoreOnEndWindow
+      objectReference: {fileID: 0}
     - target: {fileID: 3124105067447417186, guid: a316ad9f6c93ed24ca5e34a2932db696,
         type: 3}
       propertyPath: m_Name
@@ -1905,6 +1911,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a316ad9f6c93ed24ca5e34a2932db696, type: 3}
+--- !u!114 &3124105068513007654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1857812878617012017, guid: a316ad9f6c93ed24ca5e34a2932db696,
+    type: 3}
+  m_PrefabInstance: {fileID: 3124105068513007653}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3786337272030109531
 PrefabInstance:
   m_ObjectHideFlags: 0

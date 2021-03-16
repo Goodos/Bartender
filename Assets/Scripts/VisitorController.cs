@@ -88,10 +88,30 @@ public class VisitorController : MonoBehaviour
         {
             if (tray != null)
             {
-                if (tray.GetComponent<TrayMovement>().primitiveType[0] == primitiveType[0] && tray.GetComponent<TrayMovement>().primitiveType[1] == primitiveType[1]
-                    && tray.GetComponent<TrayMovement>().primitiveType[2] == primitiveType[2])
+                bool check = false;
+                int[] primitiveTypeCheck = new int[3];
+                primitiveType.CopyTo(primitiveTypeCheck, 0);
+
+                for (int i = 0; i < 3; i++)
                 {
-                    if (tray.transform.position.x >= transform.position.x && tray.transform.position.x - transform.position.x <= .5f)
+                    check = false;
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if (tray.GetComponent<TrayMovement>().primitiveType[i] == primitiveTypeCheck[j])
+                        {
+                            primitiveTypeCheck[j] = -1;
+                            check = true;
+                            break;
+                        }
+                    }
+                    if (!check)
+                    {
+                        break;
+                    }
+                }
+                if (check)
+                {
+                    if (tray.transform.position.x >= transform.position.x && tray.transform.position.x - transform.position.x <= .65f)
                     {
                         tray.GetComponent<TrayMovement>().startMove = false;
                         tray.transform.SetParent(transform);

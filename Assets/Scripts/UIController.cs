@@ -17,6 +17,7 @@ public class UIController : MonoBehaviour
 
     [SerializeField] Text time;
     [SerializeField] Text score;
+    [SerializeField] Text scoreOnEndWindow;
 
     [SerializeField] GameObject sphere;
     [SerializeField] GameObject cube;
@@ -48,6 +49,7 @@ public class UIController : MonoBehaviour
         {
             gameUi.SetActive(false);
             endWindow.SetActive(true);
+            scoreOnEndWindow.text = score.text;
             Time.timeScale = 0;
             endGame = false;
         }
@@ -57,7 +59,7 @@ public class UIController : MonoBehaviour
     {
         if (currentTray >= 0 && conveyorController.trays[currentTray] != null)
         {
-            if (conveyorController.trays[currentTray].transform.childCount < 4)
+            if (conveyorController.trays[currentTray].transform.childCount < 4 && conveyorController.trays[currentTray].transform.parent == null)
             {
                 GameObject newSphere = Instantiate(sphere, conveyorController.trays[currentTray].transform);
                 switch (conveyorController.trays[currentTray].transform.childCount)
@@ -83,7 +85,7 @@ public class UIController : MonoBehaviour
     {
         if (currentTray >= 0 && conveyorController.trays[currentTray] != null)
         {
-            if (conveyorController.trays[currentTray].transform.childCount < 4)
+            if (conveyorController.trays[currentTray].transform.childCount < 4 && conveyorController.trays[currentTray].transform.parent == null)
             {
                 GameObject newCube = Instantiate(cube, conveyorController.trays[currentTray].transform);
                 switch (conveyorController.trays[currentTray].transform.childCount)
@@ -109,7 +111,7 @@ public class UIController : MonoBehaviour
     {
         if (currentTray >= 0 && conveyorController.trays[currentTray] != null)
         {
-            if (conveyorController.trays[currentTray].transform.childCount < 4)
+            if (conveyorController.trays[currentTray].transform.childCount < 4 && conveyorController.trays[currentTray].transform.parent == null)
             {
                 GameObject newParralel = Instantiate(parralel, conveyorController.trays[currentTray].transform);
                 switch (conveyorController.trays[currentTray].transform.childCount)
